@@ -6,7 +6,7 @@ WORKDIR hello
 
 RUN env GOOS=linux GOARCH=amd64 go build
 
-FROM scratch
+FROM alpine:3.7
 
 COPY --from=build-env /go/hello/hello /go/bin/hello
 
